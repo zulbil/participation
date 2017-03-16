@@ -1,0 +1,51 @@
+<!--
+  Generated template for the Detail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header xmlns="http://www.w3.org/1999/html">
+
+  <ion-navbar [color]="navbarcolor">
+    <ion-title>Participer</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <!-- Main content of the detail page -->
+      
+      <h5>{{post.suggestionTitle}}</h5>
+      <p>Par {{post.authorName}} {{post.authorFirstName}}</p>
+      <ion-item no-lines>
+        <ion-icon color="primary" name="bulb" item-left></ion-icon>
+        <h6 style="font-size: medium; font-weight: bold;">Détail du projet</h6>
+      </ion-item>
+      <p>{{post.suggestionDetail}}</p>
+      <ion-row>
+        <ion-col text-left>
+          <button  ion-button [color]="greenColor" [disabled]="hasLiked" block (click)="dolike()"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Favorable</button>
+        </ion-col>
+        <ion-col text-right>
+          <button  ion-button [color]="redColor" [disabled]="hasDisliked" block (click)="doDislike()"><i class="fa fa-thumbs-down" aria-hidden="true"></i> Défavorable</button>
+        </ion-col>
+      </ion-row>
+
+      <ion-item no-lines>
+        <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="primary"></i></ion-avatar>
+        <h6 style="font-size: medium; font-weight: bold;">Résultat de la consultation</h6>
+
+      </ion-item>
+      <!-- End of main section of the detail page-->
+
+      <!-- a chart section of the content -->
+        <ion-row>
+          <ion-col text-center>
+            <canvas #doughnutCanvas></canvas>
+          </ion-col>
+        </ion-row>
+      <!-- end of the chart's section -->
+
+</ion-content>
