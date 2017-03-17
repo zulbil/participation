@@ -32,14 +32,14 @@
         </ion-row>
         <ion-card>
           <ion-card-content>
+            <br>
             <ion-row>
-              <ion-item>
-                <ion-label><h6>Titre</h6></ion-label>
-                <ion-select [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle" name="authoTitle">
-                  <ion-option value="monsieur" ><h6>Monsieur</h6></ion-option>
-                  <ion-option value="madame"><h6>Madame</h6></ion-option>
-                </ion-select>
-              </ion-item>
+              <ion-col width-50 text-left>
+                <input type="radio" value="monsieur" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle"/> Monsieur 
+              </ion-col>
+              <ion-col width-50 text-left>
+                <input type="radio" value="madame" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle"/> Madame <br>
+              </ion-col>
 
             </ion-row>
             <ion-row>

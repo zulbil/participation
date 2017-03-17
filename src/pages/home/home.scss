@@ -42,14 +42,23 @@ page-home {
     ion-card {
 
       ion-card-header {
+        text-justify: auto;
        font-size: medium;
         font-weight: bold;
         align-content: center;
+        white-space: inherit;
+        max-height: 55px;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
       }
 
       ion-item {
-
+        white-space: inherit;
+        max-height: 55px;
+        text-overflow: ellipsis !important;
+        overflow: hidden !important;
       }
+
     }
 
 }
