@@ -8,4 +8,6 @@ export interface post {
     suggestionDetail:string; 
     like: number; 
     dislike: number;
+    hasLiked: boolean, 
+    hasDisliked: boolean
 }

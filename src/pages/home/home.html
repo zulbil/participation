@@ -13,7 +13,7 @@
     <ion-row>
       <ion-col width-75>
           <h6>Proposer une idée ou un projet</h6>
-          <p>Votre idée sera soumise au vote de la communauté et remontée au niveau de la mairie.</p>
+          <p>Votre idée sera soumise au vote de la communauté et remontée à votre mairie.</p>
       </ion-col>
       <ion-col width-25>
         <button full ion-button style=" padding-top: 10%; width: 100%; height: 80%; background-color: #efa21c" (click)="fillInformation()">
@@ -46,9 +46,9 @@
             <ion-row>
               <ion-col width-60><button ion-button outline color="primary" block (click)="moreDetail(post)">Detail</button></ion-col>
               <ion-col width-20>
-                <button ion-button color="darkgreen" [disabled]="hasLiked" block (click)="dolike(post)">{{post.like}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                <button ion-button color="darkgreen" [disabled]="post.hasLiked" block (click)="dolike(post)">{{post.like}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
               </ion-col>
-              <ion-col width-20><button ion-button color="darkred" [disabled]="hasDisliked" block (click)="doDislike(post)">{{post.dislike}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></button></ion-col>
+              <ion-col width-20><button ion-button color="darkred" [disabled]="post.hasDisliked" block (click)="doDislike(post)">{{post.dislike}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></button></ion-col>
             </ion-row>
           </ion-card>
         </ion-row>

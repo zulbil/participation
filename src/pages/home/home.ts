@@ -21,9 +21,6 @@ export class HomePage {
 
   posts: post[] = [];
 
-  hasLiked: boolean = false; 
-  hasDisliked: boolean = false; 
-
   date: string;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams) {
@@ -36,7 +33,21 @@ export class HomePage {
           suggestionTitle:'Refection de la paroisse Saint André de Bourg ',
           suggestionDetail:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lobortis odio et sagittis. Vivamus malesuada ipsum libero, porta malesuada leo pellentesque id. Donec risus velit, laoreet fringilla elementum consequat, semper a tortor. Suspendisse feugiat pharetra metus in cursus. Aliquam id magna porta, accumsan purus egestas, ultrices sapien. Praesent vestibulum tortor sem, id eleifend eros iaculis eu. Quisque posuere sollicitudin nisl. Maecenas vitae mauris porttitor, iaculis odio nec, tristique mi. Cras ac urna risus. Vivamus sed fringilla lorem. Maecenas vitae justo ipsum. Ut mi lacus, congue sit amet sem sed, convallis tempor nibh.', 
           like: 10, 
-          dislike: 4
+          dislike: 4, 
+          hasLiked: false, 
+          hasDisliked: false
+        }, 
+        {
+          authorTitle: 'monsieur',
+          authorName: 'Kacky',
+          authorFirstName: 'Pascal',
+          authorEmail:'alexkhang25@yahoo.fr',
+          suggestionTitle:'Mise en place d\'une plateforme de jeu pour les enfants démunis de l\'orphelinat des soeurs Jésuites',
+          suggestionDetail:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lobortis odio et sagittis. Vivamus malesuada ipsum libero, porta malesuada leo pellentesque id. Donec risus velit, laoreet fringilla elementum consequat, semper a tortor. Suspendisse feugiat pharetra metus in cursus. Aliquam id magna porta, accumsan purus egestas, ultrices sapien. Praesent vestibulum tortor sem, id eleifend eros iaculis eu. Quisque posuere sollicitudin nisl. Maecenas vitae mauris porttitor, iaculis odio nec, tristique mi. Cras ac urna risus. Vivamus sed fringilla lorem. Maecenas vitae justo ipsum. Ut mi lacus, congue sit amet sem sed, convallis tempor nibh.', 
+          like: 4, 
+          dislike: 2, 
+          hasLiked: false, 
+          hasDisliked: false
         }
       ]
       this.init();
@@ -77,11 +88,11 @@ export class HomePage {
 
   dolike(post){
       post.like++;
-      this.hasLiked = true; 
+      post.hasLiked = true; 
   }
 
   doDislike(post){
      post.dislike++; 
-     this.hasDisliked = true;
+     post.hasDisliked = true;
   }
 }

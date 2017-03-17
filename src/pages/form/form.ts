@@ -35,7 +35,9 @@ export class FormPage {
     suggestionTitle: '',
     suggestionDetail: '',
     like : 0, 
-    dislike : 0
+    dislike : 0, 
+    hasLiked: false, 
+    hasDisliked: false
   }
 
 
