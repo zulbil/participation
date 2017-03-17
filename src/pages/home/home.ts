@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, ModalController } from 'ionic-angular';
+import { NavController, ModalController, NavParams } from 'ionic-angular';
 import { FormPage } from '../form/form';
 import { DetailPage } from '../detail/detail';
 import Moment from 'moment';
+import { post } from '../../model/post.model'; 
 
 @Component({
   selector: 'page-home',
@@ -18,15 +19,11 @@ export class HomePage {
 
   postIsEmpty: boolean = true;
 
-  posts = [];
+  posts: post[] = [];
 
   date: string;
 
-  like: number = 0;
-
-  dislike: number = 0;
-
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams) {
       this.posts = [
         {
           authorTitle: 'monsieur',
@@ -34,11 +31,14 @@ export class HomePage {
           authorFirstName: 'Joel Alexandre',
           authorEmail:'alexkhang25@yahoo.fr',
           suggestionTitle:'Refection de la paroisse Saint André de Bourg ',
-          suggestionDetail:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lobortis odio et sagittis. Vivamus malesuada ipsum libero, porta malesuada leo pellentesque id. Donec risus velit, laoreet fringilla elementum consequat, semper a tortor. Suspendisse feugiat pharetra metus in cursus. Aliquam id magna porta, accumsan purus egestas, ultrices sapien. Praesent vestibulum tortor sem, id eleifend eros iaculis eu. Quisque posuere sollicitudin nisl. Maecenas vitae mauris porttitor, iaculis odio nec, tristique mi. Cras ac urna risus. Vivamus sed fringilla lorem. Maecenas vitae justo ipsum. Ut mi lacus, congue sit amet sem sed, convallis tempor nibh.'
+          suggestionDetail:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce pretium lobortis odio et sagittis. Vivamus malesuada ipsum libero, porta malesuada leo pellentesque id. Donec risus velit, laoreet fringilla elementum consequat, semper a tortor. Suspendisse feugiat pharetra metus in cursus. Aliquam id magna porta, accumsan purus egestas, ultrices sapien. Praesent vestibulum tortor sem, id eleifend eros iaculis eu. Quisque posuere sollicitudin nisl. Maecenas vitae mauris porttitor, iaculis odio nec, tristique mi. Cras ac urna risus. Vivamus sed fringilla lorem. Maecenas vitae justo ipsum. Ut mi lacus, congue sit amet sem sed, convallis tempor nibh.', 
+          like: 10, 
+          dislike: 4
         }
       ]
       this.init();
       this.getCurrentDate();
+      console.log(this.posts);
   }
 
   init(){
@@ -72,11 +72,11 @@ export class HomePage {
     this.navCtrl.push(DetailPage , {post: post});
   }
 
-  dolike(e){
-      this.like++;
+  dolike(post){
+      post.like++;
   }
 
-  doDislike(e){
-    this.dislike++;
+  doDislike(post){
+     post.dislike++; 
   }
 }

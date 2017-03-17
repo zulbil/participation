@@ -47,14 +47,14 @@ export class DetailPage {
 
   // To like a post
   dolike(){
-    this.like++;
+    this.post.like++;
     this.hasLiked = true;
     this.greenColor = "grey";
   }
 
   // To dislike a post
   doDislike(){
-    this.dislike++;
+    this.post.dislike++;
     this.hasDisliked = true;
     this.redColor = "grey";
   }
@@ -68,7 +68,7 @@ export class DetailPage {
         labels: ["Défavorable", "Favorable"],
         datasets: [{
           label: '# of Likes',
-          data: [this.dislike, this.like],
+          data: [this.post.dislike, this.post.like],
           backgroundColor: [
             'rgb(139, 0, 0)',
             'rgb(0, 100, 0)'

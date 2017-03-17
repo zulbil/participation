@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { post } from '../../model/post.model'; 
 /*
   Generated class for the Form page.
 
@@ -27,7 +27,7 @@ export class FormPage {
   validForm: FormGroup;
 
   // Object that represent the post with the author and the suggestion related to him
-  public post = {
+  public post: post = {
     authorTitle: '',
     authorName: '',
     authorFirstName: '',

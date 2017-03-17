@@ -46,9 +46,9 @@
             <ion-row>
               <ion-col width-60><button ion-button outline color="primary" block (click)="moreDetail(post)">Detail</button></ion-col>
               <ion-col width-20>
-                <button ion-button color="darkgreen" block (click)="dolike($event)">{{like}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                <button ion-button color="darkgreen" block (click)="dolike(post)">{{post.like}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
               </ion-col>
-              <ion-col width-20><button ion-button color="darkred" block (click)="doDislike($event)">{{dislike}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></button></ion-col>
+              <ion-col width-20><button ion-button color="darkred" block (click)="doDislike(post)">{{post.dislike}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></button></ion-col>
             </ion-row>
           </ion-card>
         </ion-row>
