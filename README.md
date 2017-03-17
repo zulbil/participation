@@ -10,6 +10,8 @@ Go to your home directory and type in your cli:
 
 -npm install -g cordova ionic
 
+-npm install
+
 -ionic serve 
 
 # Library used in this project 
