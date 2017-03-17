@@ -27,16 +27,7 @@ export class FormPage {
   validForm: FormGroup;
 
   // Object that represent the post with the author and the suggestion related to him
-  public post: post = {
-    authorTitle: '',
-    authorName: '',
-    authorFirstName: '',
-    authorEmail:'',
-    suggestionTitle:'',
-    suggestionDetail:'', 
-    like: 0, 
-    dislike: 0
-  };
+  public post: post; 
 
 
   // We define an empty array of post

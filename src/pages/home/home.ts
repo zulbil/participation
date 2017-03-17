@@ -21,6 +21,9 @@ export class HomePage {
 
   posts: post[] = [];
 
+  hasLiked: boolean = false; 
+  hasDisliked: boolean = false; 
+
   date: string;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams) {
@@ -74,9 +77,11 @@ export class HomePage {
 
   dolike(post){
       post.like++;
+      this.hasLiked = true; 
   }
 
   doDislike(post){
      post.dislike++; 
+     this.hasDisliked = true;
   }
 }

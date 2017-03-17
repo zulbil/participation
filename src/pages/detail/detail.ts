@@ -1,6 +1,7 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { Chart } from 'chart.js';
+import { post } from '../../model/post.model'; 
 /*
   Generated class for the Detail page.
 
@@ -25,13 +26,9 @@ export class DetailPage {
 
   greyColor: string = "grey";
 
-  post: any;
-
-  like: number = 15;
+  post: post;
 
   hasLiked: boolean = false;
-
-  dislike: number = 9;
 
   hasDisliked: boolean = false;
 
