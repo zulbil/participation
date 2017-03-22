@@ -33,7 +33,7 @@
         </ion-col>
       </ion-row>
 
-      <ion-item no-lines>
+      <ion-item no-lines style="padding-top: 30px;">
         <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="primary"></i></ion-avatar>
         <h6 style="font-size: medium; font-weight: bold;">Résultat de la consultation</h6>
 
@@ -41,11 +41,8 @@
       <!-- End of main section of the detail page-->
 
       <!-- a chart section of the content -->
-        <ion-row>
-          <ion-col text-center>
-            <canvas #doughnutCanvas></canvas>
-          </ion-col>
-        </ion-row>
+      
+        <progressbar [for]="like" [against]="dislike"></progressbar>
       <!-- end of the chart's section -->
 
 </ion-content>

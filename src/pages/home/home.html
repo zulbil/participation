@@ -12,7 +12,7 @@
   <ion-list>
     <ion-row>
       <ion-col width-75>
-          <h6>Proposer une idée ou un projet</h6>
+          <h6 style="font-weight: bold;">Proposer une idée ou un projet</h6>
           <p>Votre idée sera soumise au vote de la communauté et remontée à votre mairie.</p>
       </ion-col>
       <ion-col width-25>
@@ -31,20 +31,22 @@
     <ion-grid>
         <ion-row>
           <ion-col text-center>
-            <p *ngIf="postIsEmpty">Aucunes propositions en cours</p>
-            <p *ngIf="!postIsEmpty">Propositions en cours</p>
+            <p *ngIf="postIsEmpty" style="font-size: medium; color: #ffffff;">Aucunes propositions en cours</p>
+            <p *ngIf="!postIsEmpty" style="font-size: medium; color: #ffffff;">Propositions en cours</p>
           </ion-col>
         </ion-row>
 
         <ion-row *ngFor="let post of posts">
           <ion-card>
-              <ion-card-header>{{post.suggestionTitle}}</ion-card-header>
+              <ion-card-header>
+                {{post.suggestionTitle}}
+              </ion-card-header>
               <ion-list>
-                  <ion-item style="font-size: small;">{{post.suggestionDetail}}</ion-item>
+                  <ion-item style="font-size: small; max-height: 55px; ">{{post.suggestionDetail}}</ion-item>
                   <ion-item style="font-size: small; ">Par {{post.authorName}} {{post.authorFirstName}}, le {{date}}</ion-item>
               </ion-list>
             <ion-row>
-              <ion-col width-60><button ion-button outline color="primary" block (click)="moreDetail(post)">Detail</button></ion-col>
+              <ion-col width-60><button ion-button outline color="primary" block (click)="moreDetail(post)">Détail</button></ion-col>
               <ion-col width-20>
                 <button ion-button color="darkgreen" [disabled]="post.hasLiked" block (click)="dolike(post)">{{post.like}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
               </ion-col>

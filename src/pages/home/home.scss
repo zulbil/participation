@@ -9,7 +9,7 @@ page-home {
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100% 100%;
-      opacity: 0.8;
+
 
       ion-list {
         background-color: #ffffff;
@@ -41,24 +41,43 @@ page-home {
 
     ion-card {
 
-      ion-card-header {
-        text-justify: auto;
-       font-size: medium;
+      ion-card-header { 
         font-weight: bold;
-        align-content: center;
-        white-space: inherit;
-        max-height: 55px;
+        overflow: hidden; 
+        line-height: 25px;
+        height: 65px;
+        display: block;
+        white-space: normal !important;
         text-overflow: ellipsis !important;
-        overflow: hidden !important;
       }
 
-      ion-item {
-        white-space: inherit;
-        max-height: 55px;
-        text-overflow: ellipsis !important;
-        overflow: hidden !important;
-      }
 
+      ion-card-content {
+
+      }
     }
 
+    .ellipsis {
+
+      overflow: hidden;
+      height: 64px;
+      line-height: 25px;
+      white-space: normal;
+      
+   }
+
+
+}
+
+.ios {
+   ion-card{
+
+      ion-card-header{
+        font-weight: bold;
+      }
+
+      ion-card-content{
+
+      }
+    }
 }

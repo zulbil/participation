@@ -4,6 +4,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FormPage } from '../pages/form/form';
 import { DetailPage } from '../pages/detail/detail';
+import { ProgressbarComponent } from '../components/progressbar/progressbar';
+
 
 
 @NgModule({
@@ -11,7 +13,8 @@ import { DetailPage } from '../pages/detail/detail';
     MyApp,
     HomePage,
     FormPage,
-    DetailPage
+    DetailPage, 
+    ProgressbarComponent
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -21,7 +24,8 @@ import { DetailPage } from '../pages/detail/detail';
     MyApp,
     HomePage,
     FormPage,
-    DetailPage
+    DetailPage, 
+    ProgressbarComponent
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
 })
