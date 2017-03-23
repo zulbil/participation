@@ -16,11 +16,10 @@ Go to your home directory and type in your cli:
 
 # Library used in this project 
 
-We use some third part library in this project like: 
+We use a font-awesome library in this project like: 
 
-1.chart.js =====> we can install directly through your project directory by running npm install --save chart.js
+font-awesome ===> allow us to extend a list of icon that ionic2 provide by default, can be installed by running: 
 
-
-2.font-awesome ===> allow us to extend a list of icon that ionic2 provide by default, can be installed by running npm install font-awesome --save
+npm install font-awesome --save
 
 
