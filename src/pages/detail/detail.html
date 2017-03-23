@@ -16,14 +16,22 @@
 <ion-content padding>
 
     <!-- Main content of the detail page -->
-      
-      <h5>{{post.suggestionTitle}}</h5>
-      <p>Par {{post.authorName}} {{post.authorFirstName}}</p>
+      <ion-row style="padding-left: 5px;">
+        <h5 style="font-weight: bold;">{{post.suggestionTitle}}</h5>
+        <p class="text-author">Par {{post.authorName}} {{post.authorFirstName}}, le 22/03/2017</p> 
+      </ion-row>
+
       <ion-item no-lines>
-        <ion-icon color="primary" name="bulb" item-left></ion-icon>
-        <h6 style="font-size: medium; font-weight: bold;">Détail du projet</h6>
+          <ion-avatar item-left>
+            <ion-icon id="icon-center" color="light" name="bulb"></ion-icon>
+          </ion-avatar>
+            <h6 style="font-size: medium; font-weight: bold;">Détail du projet</h6>
       </ion-item>
-      <p>{{post.suggestionDetail}}</p>
+
+      <ion-row style="padding-left: 5px;">
+        <p>{{post.suggestionDetail}}</p>
+      </ion-row>
+     
       <ion-row>
         <ion-col text-left>
           <button  ion-button [color]="greenColor" [disabled]="hasLiked" block (click)="dolike()"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Favorable</button>
@@ -33,11 +41,13 @@
         </ion-col>
       </ion-row>
 
-      <ion-item no-lines style="padding-top: 30px;">
-        <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="primary"></i></ion-avatar>
-        <h6 style="font-size: medium; font-weight: bold;">Résultat de la consultation</h6>
+      <ion-row>
+        <ion-item no-lines style="padding-top: 30px;">
+          <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="light" style="padding-left: 10px; padding-top: 10px; font-size: 20px;"></i></ion-avatar>
+          <h6 style="font-size: medium; font-weight: bold;">Résultat de la consultation</h6>
 
-      </ion-item>
+        </ion-item>
+      </ion-row>
       <!-- End of main section of the detail page-->
 
       <!-- a chart section of the content -->

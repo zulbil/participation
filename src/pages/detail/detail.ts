@@ -44,15 +44,13 @@ export class DetailPage {
 
   // To like a post
   dolike(){
-    this.post.like++;
-    this.hasLiked = true;
+    this.post.like++; 
     this.greenColor = "grey";
   }
 
   // To dislike a post
   doDislike(){
     this.post.dislike++;
-    this.hasDisliked = true;
     this.redColor = "grey";
   }
 

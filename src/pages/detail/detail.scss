@@ -1,4 +1,32 @@
 page-detail {
 
+	.text-author {
+      font-size: smaller;
+      padding-top: 10px; 
+      padding-left: 2px;
+   }
 
+   ion-avatar {
+   	background-color: map-get($colors, primary); 
+   	border-radius: 25px; 
+   	align-content: center; 
+   	padding-right: 10px; 
+   }
+
+   #icon-center {
+   	padding-left: 10px; 
+   	padding-top: 5px; 
+   	align-content: center; 
+   	font-size: 25px;
+   }
+}
+
+.ios{
+	
+	#icon-center {
+   	padding-left: 10px; 
+   	padding-top: 5px; 
+   	align-content: center; 
+   	font-size: 25px;
+   }
 }

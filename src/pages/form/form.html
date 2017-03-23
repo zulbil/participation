@@ -33,9 +33,9 @@
         <ion-card>
           <ion-card-content>
             <br>
-            <ion-row>
-              <ion-col width-50 text-left>
-                <input type="radio" value="monsieur" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle"/> Monsieur 
+            <ion-row style="padding-left: 10px;">
+              <ion-col width-50>
+                <input  type="radio" value="monsieur" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle" /> Monsieur 
               </ion-col>
               <ion-col width-50 text-left>
                 <input type="radio" value="madame" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle"/> Madame <br>

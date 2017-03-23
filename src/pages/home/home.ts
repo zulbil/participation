@@ -89,10 +89,14 @@ export class HomePage {
   dolike(post){
       post.like++;
       post.hasLiked = true;
+     /* var liked = post.hasLiked; 
+      this.navCtrl.push(DetailPage, {like : liked}); */
   }
 
   doDislike(post){
      post.dislike++;
      post.hasDisliked = true;
+    /* var disliked = post.hasDisliked; 
+     this.navCtrl.push(DetailPage, {dislike : disliked}); */
   }
 }

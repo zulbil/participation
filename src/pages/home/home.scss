@@ -25,10 +25,6 @@ page-home {
               font-size: medium;
             }
 
-            p {
-              font-size: x-small;
-            }
-
             .btn {
               padding-top: 10%; width: 100%; height: 80%; background-color: #efa21c;
             }
@@ -42,12 +38,14 @@ page-home {
     ion-card {
 
       ion-card-header { 
+        display: block; 
+        display: -webkit-box;
         font-weight: bold;
         overflow: hidden; 
         line-height: 25px;
         height: 65px;
-        display: block;
-        white-space: normal !important;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
         text-overflow: ellipsis !important;
       }
 
@@ -57,13 +55,29 @@ page-home {
       }
     }
 
-    .ellipsis {
+    $font-size: 10px; 
+    $line-height: 1.5em; 
+    $lines-to-show: 2; 
 
+    .text-content {
+      display: block;
+      display: -webkit-box; 
       overflow: hidden;
-      height: 64px;
-      line-height: 25px;
+      height: 4em;
+      margin: 0 auto;
+      line-height: $line-height !important;
+      -webkit-line-clamp: $lines-to-show;
+      -webkit-box-orient: vertical;
       white-space: normal;
-      
+      width: 100%; 
+      text-overflow: ellipsis !important;
+      padding-top: 10px;
+   }
+
+   .text-author {
+      font-size: smaller;
+      padding-top: 10px; 
+      padding-left: 2px;
    }
 
 
