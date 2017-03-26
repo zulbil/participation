@@ -21,8 +21,10 @@
   <ion-content>
 
       <ion-row>
-        <h6 style="margin-left:20px;">Participez aux décisions de la ville</h6>
-        <p style="margin-left:20px;"> Soumettez votre idée afin qu'elle soit examinée par votre mairie. Merci pour la contribution active que vous posez.</p>
+        <ion-col text-center>
+          <h6>Participez aux décisions de la ville</h6>
+          <p> Soumettez votre idée afin qu'elle soit examinée par votre mairie. Merci pour la contribution active que vous posez.</p>
+        </ion-col>
       </ion-row>
 
     <!-- the beginning of the form -->
@@ -97,7 +99,7 @@
 
       <ion-row>
         <ion-col>
-          <button ion-button full [color]="bulbColor" (click)="savePost()">Proposer</button>
+          <button ion-button full [color]="bulbColor" style="height: 50px;" (click)="savePost()">Proposer</button>
         </ion-col>
       </ion-row>
 

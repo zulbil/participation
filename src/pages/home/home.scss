@@ -1,10 +1,10 @@
 page-home {
 
     ion-content {
-      //background-image: url("../../assets/img/participer.jpg");
-      background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg");
-      // -webkit-background-image: url("../../assets/img/participer.jpg");
-      -webkit-background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg");
+      background-image: url("../../assets/sondage.jpg");
+     // background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg");
+       -webkit-background-image: url("../../assets/sondage.jpg");
+      /*-webkit-background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg");*/
       background-origin: content-box;
       background-repeat: no-repeat;
       background-position: center;
@@ -12,7 +12,7 @@ page-home {
 
 
       ion-list {
-        background-color: #ffffff;
+        background-color: #f8f8ff;
 
         ion-item{
 
@@ -37,18 +37,9 @@ page-home {
 
     ion-card {
 
-      ion-card-header { 
-        display: block; 
-        display: -webkit-box;
-        font-weight: bold;
-        overflow: hidden; 
-        line-height: 25px;
-        height: 65px;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis !important;
+      ion-card-header {
+        font-weight: bold; 
       }
-
 
       ion-card-content {
 
@@ -80,6 +71,21 @@ page-home {
       padding-left: 2px;
    }
 
+   .text-indicator {
+      font-size: medium; 
+      color: map-get($colors, light); 
+      padding-bottom: 40px; 
+      text-align: center; 
+      align-content: center;
+   }
+
+    .submit {
+    border-radius: 5px; 
+    padding-top: 10%; 
+    width: 100%; 
+    height: 80%; 
+    background-color: map-get($colors, bulbColor); 
+   }
 
 }
 
@@ -94,4 +100,13 @@ page-home {
 
       }
     }
+
+    .text-indicator {
+      font-size: medium; 
+      color: map-get($colors, light); 
+      padding-bottom: 50px; 
+      text-align: center; 
+      align-content: center;
+   }
+
 }

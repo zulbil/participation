@@ -21,7 +21,18 @@ export class DetailPage {
 
   greyColor: string = "grey";
 
-  post: post;
+  post: post = {
+    authorTitle: '',
+    authorName: '',
+    authorFirstName: '',
+    authorEmail: '',
+    suggestionTitle: '',
+    suggestionDetail: '',
+    like : 0, 
+    dislike : 0, 
+    hasLiked: false, 
+    hasDisliked: false
+  };
 
   hasLiked: boolean = false;
 
@@ -34,6 +45,8 @@ export class DetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.post = navParams.get('post');
+    this.hasDisliked = this.post.hasLiked;
+    this.hasLiked = this.post.hasDisliked;
     console.log(this.post);
     
   }
@@ -45,13 +58,13 @@ export class DetailPage {
   // To like a post
   dolike(){
     this.post.like++; 
-    this.greenColor = "grey";
+    this.redColor = this.greyColor;
   }
 
   // To dislike a post
   doDislike(){
     this.post.dislike++;
-    this.redColor = "grey";
+    this.greenColor = this.greyColor;
   }
 
   // A method to intialize a rating bar
