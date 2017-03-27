@@ -9,19 +9,19 @@
 <ion-content>
 
   <!-- The Header section of the content -->
-  <ion-list>
+  <ion-list class="header-section">
     <ion-row>
       <ion-col width-75>
-        <div style="padding-left: 10px;">
-          <h6 style="font-weight: bold;">Proposer une idée ou un projet</h6>
-          <p style="font-size: smaller;">Votre idée sera soumise au vote de la communauté et remontée à votre mairie.</p>
+        <div class="text-header">
+          <p class="highlight">Proposer une idée ou un projet</p>
+          <p class="text">Votre idée sera soumise au vote de la communauté et remontée à votre mairie.</p>
         </div>
       </ion-col>
       <ion-col width-25>
         <button full ion-button class="submit" (click)="fillInformation()">
-          <div>
-            <ion-icon name="bulb" style="font-size: 35px;"></ion-icon>
-            <h6 style="font-size: smaller">Proposer</h6>
+          <div class="make-suggestion">
+            <ion-icon name="bulb" class="icon-size"></ion-icon>
+            <p id="text">Proposer</p>
           </div>
         </button>
       </ion-col>
@@ -30,23 +30,19 @@
   <!-- The Header section of the content -->
 
   <!-- The main section of the content -->
-        <div style="height: 20px;">  
+        <div class="proposition">  
             <p *ngIf="postIsEmpty" class="text-indicator">Aucunes propositions en cours</p>
             <p *ngIf="!postIsEmpty" class="text-indicator">Propositions en cours</p>
         </div>
 
         <ion-row *ngFor="let post of posts">
           <ion-card>
-              <ion-card-header>
-                {{post.suggestionTitle}}
-              </ion-card-header>
+              <ion-card-header> {{post.suggestionTitle}} </ion-card-header>
               <ion-card-content>
                 
                 <p class="text-content">{{post.suggestionDetail}}</p>
                 
-                <div class="text-author">
-                  Par {{post.authorName}} {{post.authorFirstName}}, le 22/03/2017
-                </div>
+                <p class="text-author">Par {{post.authorName | SubstringName}}.{{post.authorFirstName}}, le 22/03/17</p>
                 <ion-row>
                   <ion-col width-60><button ion-button outline block style="padding-left: 5px;" color="primary" (click)="moreDetail(post)" >Détail</button></ion-col>
                   <ion-col width-20>

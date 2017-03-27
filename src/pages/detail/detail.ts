@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component,transition, animate, keyframes, trigger, style, state} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { post } from '../../model/post.model';
 /*
@@ -9,7 +9,21 @@ import { post } from '../../model/post.model';
 */
 @Component({
   selector: 'page-detail',
-  templateUrl: 'detail.html'
+  templateUrl: 'detail.html', 
+  animations : [
+      trigger('makeMeWorks', [
+          state('inactive', style({
+            transform: 'scale(1)'
+          })), 
+          state('active', style({
+            transform: 'scale(1.2)', 
+            backgroundColor: '#848484'
+          })),
+          transition('inactive => active', animate('100ms ease-in')),
+          transition('active => inactive', animate('100ms ease-out')) 
+        ])
+
+  ]
 })
 export class DetailPage {
 
@@ -41,30 +55,43 @@ export class DetailPage {
   like: any = 0; 
   dislike: any = 0; 
 
+  showRatingBar: boolean = false; 
 
+  state: string = "inactive"; 
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.post = navParams.get('post');
     this.hasDisliked = this.post.hasLiked;
     this.hasLiked = this.post.hasDisliked;
+
     console.log(this.post);
-    
+    this.initChart();
   }
 
   ionViewDidLoad() {
     this.initChart();
+    console.log(this.showRatingBar);
   }
+
+  ionViewWillLeave() {
+    this.post.hasLiked; 
+    this.post.hasDisliked;
+  }
+
 
   // To like a post
   dolike(){
     this.post.like++; 
     this.redColor = this.greyColor;
+    this.post.hasLiked = true; 
   }
 
   // To dislike a post
   doDislike(){
     this.post.dislike++;
     this.greenColor = this.greyColor;
+    this.post.hasDisliked = true; 
+    this.state = (this.state === 'inactive' ? 'active' : 'inactive'); 
   }
 
   // A method to intialize a rating bar
@@ -79,5 +106,20 @@ export class DetailPage {
        var dislike = percentageDislike.toFixed(0);
        this.dislike = dislike;
        console.log("dislike: "+this.dislike); 
+
+       if(like === "NaN" && dislike === "NaN" ){
+         this.showRatingBar = false; 
+         return;
+       }
+
+       else if (like === "0" && dislike === "0") {
+          this.showRatingBar = false; 
+          return; 
+       }
+
+       else {
+         this.showRatingBar = true; 
+       }
+
   }
 }
