@@ -13,8 +13,8 @@ import { Component, Input } from '@angular/core';
 export class ProgressbarComponent {
 
   text: string;
-  @Input('for') like; 
-  @Input ('against') dislike; 
+  @Input('for') like;
+  @Input ('against') dislike;
 
   constructor() {
     console.log('Hello Progressbar Component');

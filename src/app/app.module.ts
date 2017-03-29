@@ -4,7 +4,6 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FormPage } from '../pages/form/form';
 import { DetailPage } from '../pages/detail/detail';
-import { ProgressbarComponent } from '../components/progressbar/progressbar';
 import { Substring } from '../pipes/substring';
 import { CacheProvider } from '../providers/cache-provider'; 
 
@@ -15,7 +14,6 @@ import { CacheProvider } from '../providers/cache-provider';
     HomePage,
     FormPage,
     DetailPage, 
-    ProgressbarComponent, 
     Substring
   ],
   imports: [
@@ -26,8 +24,7 @@ import { CacheProvider } from '../providers/cache-provider';
     MyApp,
     HomePage,
     FormPage,
-    DetailPage, 
-    ProgressbarComponent
+    DetailPage
   ],
   providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, CacheProvider]
 })

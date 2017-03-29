@@ -40,7 +40,7 @@
             <button ion-button [color]="redColor" [disabled]="hasDisliked" block (click)="doDislike()"><i class="fa fa-thumbs-down" aria-hidden="true"></i><span class="btn-survey">Défavorable</span></button>
         </ion-col>
     </ion-row>
-    
+
     <ion-row>
         <ion-item no-lines class="header-result-survey">
             <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="light" id="icon-center"></i></ion-avatar>
@@ -50,8 +50,16 @@
 
     <!-- End of main section of the detail page-->
     <!-- a chart section of the content -->
-    <progressbar *ngIf="showRatingBar" [@makeMeWorks]="state" [for]="like" [against]="dislike"></progressbar> 
-       
+    <ion-row *ngIf="showRatingBar">
+        <div class="customRatingBar">
+            <div class="like" [style.width]="like +'%'" [@likeAnimation]="likeState">
+                <div style="padding-top: 5px;">{{like}}%</div>
+            </div>
+            <div class="dislike" [style.width]="dislike+'%'" [@dislikeAnimation]="dislikeState">
+                <div style="padding-top: 5px;">{{dislike}}%</div>
+            </div>
+        </div>
+    </ion-row> 
     <!-- end of the chart's section -->
     <p *ngIf="!showRatingBar" class="alert-survey">Pas de résultat de consultation disponible.</p>
         

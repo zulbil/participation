@@ -1,4 +1,4 @@
-import {Component,transition, animate, keyframes, trigger, style, state} from '@angular/core';
+import {Component,transition, animate, keyframes, trigger, style} from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { post } from '../../model/post.model';
 /*
@@ -11,17 +11,24 @@ import { post } from '../../model/post.model';
   selector: 'page-detail',
   templateUrl: 'detail.html', 
   animations : [
-      trigger('makeMeWorks', [
-          state('inactive', style({
-            transform: 'scale(1)'
-          })), 
-          state('active', style({
-            transform: 'scale(1.2)', 
-            backgroundColor: '#848484'
-          })),
-          transition('inactive => active', animate('100ms ease-in')),
-          transition('active => inactive', animate('100ms ease-out')) 
+    trigger('likeAnimation', [
+          transition('inactive => active', [
+           animate('1s linear', keyframes([
+               style({ opacity: 0.2, offset: 0.2}), 
+               style({ opacity: 0.4, offset: 0.4}),
+               style({ opacity: 1, offset: 1}) 
+          ]))
         ])
+    ]), 
+    trigger('dislikeAnimation', [
+          transition('inactive => active', [
+           animate('1s linear', keyframes([
+               style({ opacity: 0.2, offset: 0.2}), 
+               style({ opacity: 0.4, offset: 0.4}),
+               style({ opacity: 1, offset: 1}) 
+          ]))
+        ])
+    ])
 
   ]
 })
@@ -57,7 +64,9 @@ export class DetailPage {
 
   showRatingBar: boolean = false; 
 
-  state: string = "inactive"; 
+  likeState: string = "inactive";
+
+  dislikeState: string = "inactive";  
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.post = navParams.get('post');
@@ -84,6 +93,8 @@ export class DetailPage {
     this.post.like++; 
     this.redColor = this.greyColor;
     this.post.hasLiked = true; 
+    this.likeState = (this.likeState === 'inactive' ? 'active' : 'inactive'); 
+    this.initChart();
   }
 
   // To dislike a post
@@ -91,7 +102,8 @@ export class DetailPage {
     this.post.dislike++;
     this.greenColor = this.greyColor;
     this.post.hasDisliked = true; 
-    this.state = (this.state === 'inactive' ? 'active' : 'inactive'); 
+    this.dislikeState = (this.dislikeState === 'inactive' ? 'active' : 'inactive'); 
+    this.initChart();
   }
 
   // A method to intialize a rating bar
