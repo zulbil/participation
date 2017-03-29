@@ -16,43 +16,52 @@
 <ion-content padding>
 
     <!-- Main content of the detail page -->
-      <ion-row style="padding-left: 5px;">
-        <h5 style="font-weight: bold;">{{post.suggestionTitle}}</h5>
-        <p class="text-author">Par {{post.authorName}} {{post.authorFirstName}}, le 22/03/2017</p> 
-      </ion-row>
+     <div id="header">
+        <p class="suggestion-title">{{post.suggestionTitle}}</p>
+        <p class="text-author">Par {{post.authorName | SubstringName}}.{{post.authorFirstName}}, le 22/03/17</p>
+     </div>
 
-      <ion-item no-lines>
-          <ion-avatar item-left>
+    <ion-item no-lines>
+        <ion-avatar item-left>
             <ion-icon id="icon-center" color="light" name="bulb"></ion-icon>
-          </ion-avatar>
-            <h6 style="font-size: medium; font-weight: bold;">Détail du projet</h6>
-      </ion-item>
+        </ion-avatar>
+        <p id="title">Détail du projet</p>
+    </ion-item>
 
-      <ion-row style="padding-left: 5px;">
+    <ion-row>
         <p>{{post.suggestionDetail}}</p>
-      </ion-row>
-     
-      <ion-row>
+    </ion-row>
+
+    <ion-row>
         <ion-col text-left>
-          <button  ion-button [color]="greenColor" [disabled]="hasLiked" block (click)="dolike()"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Favorable</button>
+            <button ion-button [color]="greenColor" [disabled]="hasLiked" block (click)="dolike()"><i class="fa fa-thumbs-up" aria-hidden="true"></i><span class="btn-survey"> Favorable</span></button>
         </ion-col>
         <ion-col text-right>
-          <button  ion-button [color]="redColor" [disabled]="hasDisliked" block (click)="doDislike()"><i class="fa fa-thumbs-down" aria-hidden="true"></i> Défavorable</button>
+            <button ion-button [color]="redColor" [disabled]="hasDisliked" block (click)="doDislike()"><i class="fa fa-thumbs-down" aria-hidden="true"></i><span class="btn-survey">Défavorable</span></button>
         </ion-col>
-      </ion-row>
+    </ion-row>
 
-      <ion-row>
-        <ion-item no-lines style="padding-top: 30px;">
-          <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="light" style="padding-left: 10px; padding-top: 10px; font-size: 20px;"></i></ion-avatar>
-          <h6 style="font-size: medium; font-weight: bold;">Résultat de la consultation</h6>
-
+    <ion-row>
+        <ion-item no-lines class="header-result-survey">
+            <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="light" id="icon-center"></i></ion-avatar>
+            <p id="title">Résultat de la consultation</p>
         </ion-item>
-      </ion-row>
-      <!-- End of main section of the detail page-->
+    </ion-row> 
 
-      <!-- a chart section of the content -->
-      
-        <progressbar [for]="like" [against]="dislike"></progressbar>
-      <!-- end of the chart's section -->
+    <!-- End of main section of the detail page-->
+    <!-- a chart section of the content -->
+    <ion-row *ngIf="showRatingBar">
+        <div class="customRatingBar">
+            <div class="like" [style.width]="like +'%'" [@likeAnimation]="likeState">
+                <div style="padding-top: 5px;">{{like}}%</div>
+            </div>
+            <div class="dislike" [style.width]="dislike+'%'" [@dislikeAnimation]="dislikeState">
+                <div style="padding-top: 5px;">{{dislike}}%</div>
+            </div>
+        </div>
+    </ion-row> 
+    <!-- end of the chart's section -->
+    <p *ngIf="!showRatingBar" class="alert-survey">Pas de résultat de consultation disponible.</p>
+        
 
 </ion-content>

@@ -1,5 +1,5 @@
 page-form {
-
+  
   ion-content {
     background-color: #f2f2f2 !important;
 
@@ -14,5 +14,33 @@ page-form {
       }
     }
    }
+
+  .contactIdentity {
+    .border-bottom {
+      margin-bottom: 4px;
+    .input-wrapper {
+        border-bottom: solid 1px grey;
+      }
+    }
+    .border-bottom:last-child {
+      margin-bottom: 20px;
+    }
+  }
+
+   textarea {
+    min-height: 180px;
+    box-sizing: border-box;
+    padding: 0 10px;
+  }
+
+  .gender-choice:last-child {
+    margin-left: 20px;
+  }
+
+   ion-label, .placeholder-txt {
+    color: #373637 !important;
+    font-size: 16px;
+  }
+
 
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ViewController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { post } from '../../model/post.model'; 
+import { CacheProvider } from '../../providers/cache-provider';
 /*
   Generated class for the Form page.
 
@@ -26,6 +27,14 @@ export class FormPage {
   // this variable represent our form
   validForm: FormGroup;
 
+  // data we are going to use in cache memory
+  contactIdentity: any = {
+    authorTitle: '',
+    authorName: '',
+    authorFirstName: '',
+    authorEmail: ''
+  }; 
+
   // Object that represent the post with the author and the suggestion related to him
   public post :post = {
     authorTitle: '',
@@ -42,8 +51,8 @@ export class FormPage {
 
 
   // We define an empty array of post
-  public posts  = [];
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public formBuilder: FormBuilder) {
+  public posts :post[] = [];
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public formBuilder: FormBuilder, public cacheService: CacheProvider) {
 
     this.validForm = formBuilder.group({
       authorTitle: ['', Validators.required],
@@ -53,11 +62,26 @@ export class FormPage {
       suggestionTitle: ['',  Validators.compose([Validators.maxLength(100), Validators.required])],
       suggestionDetail: ['', Validators.compose([Validators.maxLength(1000), Validators.required])]
     });
+
+    this.getCachedContact();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad FormPage');
   }
+
+  getCachedContact() {
+      this.cacheService.getCache('contactIdentity').then((contact) => {
+          if (contact) {
+            this.contactIdentity = contact;
+          }
+          this.validForm.controls['authorName'].setValue(this.contactIdentity.authorName || '');
+          this.validForm.controls['authorFirstName'].setValue(this.contactIdentity.authorFirstName || '');
+          this.validForm.controls['authorEmail'].setValue(this.contactIdentity.authorEmail || '');
+          this.validForm.controls['authorTitle'].setValue(this.contactIdentity.authorTitle || '');
+      });
+    }
+
 
 
   close(){

@@ -4,8 +4,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FormPage } from '../pages/form/form';
 import { DetailPage } from '../pages/detail/detail';
-import { ProgressbarComponent } from '../components/progressbar/progressbar';
-
+import { Substring } from '../pipes/substring';
+import { CacheProvider } from '../providers/cache-provider'; 
 
 
 @NgModule({
@@ -14,7 +14,7 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     HomePage,
     FormPage,
     DetailPage, 
-    ProgressbarComponent
+    Substring
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -24,9 +24,8 @@ import { ProgressbarComponent } from '../components/progressbar/progressbar';
     MyApp,
     HomePage,
     FormPage,
-    DetailPage, 
-    ProgressbarComponent
+    DetailPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}, CacheProvider]
 })
 export class AppModule {}

@@ -1,18 +1,20 @@
-page-home {
+.ios, .md {
+
+  page-home {
 
     ion-content {
       background-image: url("../../assets/sondage.jpg");
-     // background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg");
-       -webkit-background-image: url("../../assets/sondage.jpg");
+     /* background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg"); */
+      -webkit-background-image: url("../../assets/sondage.jpg");
       /*-webkit-background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg");*/
       background-origin: content-box;
       background-repeat: no-repeat;
       background-position: center;
-      background-size: 100% 100%;
+      background-size: cover;
 
 
       ion-list {
-        background-color: #f8f8ff;
+       background-color: #f8f8ff;
 
         ion-item{
 
@@ -38,7 +40,8 @@ page-home {
     ion-card {
 
       ion-card-header {
-        font-weight: bold; 
+        font-weight: bold;
+        border-bottom: 3px solid #f2f2f2;
       }
 
       ion-card-content {
@@ -46,13 +49,13 @@ page-home {
       }
     }
 
-    $font-size: 10px; 
-    $line-height: 1.5em; 
-    $lines-to-show: 2; 
+    $font-size: 10px;
+    $line-height: 1.5em;
+    $lines-to-show: 2;
 
     .text-content {
       display: block;
-      display: -webkit-box; 
+      display: -webkit-box;
       overflow: hidden;
       height: 4em;
       margin: 0 auto;
@@ -60,53 +63,67 @@ page-home {
       -webkit-line-clamp: $lines-to-show;
       -webkit-box-orient: vertical;
       white-space: normal;
-      width: 100%; 
+      width: 100%;
       text-overflow: ellipsis !important;
       padding-top: 10px;
    }
 
    .text-author {
       font-size: smaller;
-      padding-top: 10px; 
+      padding-top: 10px;
       padding-left: 2px;
    }
 
    .text-indicator {
-      font-size: medium; 
-      color: map-get($colors, light); 
-      padding-bottom: 40px; 
-      text-align: center; 
+      font-size: medium;
+      color: map-get($colors, light);
+      padding-bottom: 40px;
+      text-align: center;
       align-content: center;
    }
 
     .submit {
-    border-radius: 5px; 
-    padding-top: 10%; 
-    width: 100%; 
-    height: 80%; 
-    background-color: map-get($colors, bulbColor); 
+      border-radius: 5px;
+      padding-top: 10%;
+      width: 100%;
+      height: 80%;
+      background-color: map-get($colors, bulbColor);
    }
 
-}
+   .back-header {
+       background-color: #f8f8ff;
+    }
 
-.ios {
-   ion-card{
+    .text-header {
+      padding-left: 10px;
 
-      ion-card-header{
+      .highlight {
         font-weight: bold;
+        font-size: medium;
       }
 
-      ion-card-content{
-
+      .text {
+        font-size: 12px;
       }
     }
 
-    .text-indicator {
-      font-size: medium; 
-      color: map-get($colors, light); 
-      padding-bottom: 50px; 
-      text-align: center; 
+    .make-suggestion {
+      .icon-size {
+        font-size: 35px;
+      }
+      #text {
+        font-size: smaller;
+      }
+    }
+
+    .proposition {
+      height: 20px;
       align-content: center;
-   }
+    }
+
+    .header-section {
+
+    }
+}
 
 }

@@ -32,41 +32,45 @@
         <ion-row>
           <p style="margin-left:20px;" *ngIf="formIsNotValid" class="center" ion-text color="danger">Veuillez remplir tous les champs</p>
         </ion-row>
-        <ion-card>
+
+        <!-- Contact Identity -->
+        <ion-card class="contactIdentity">
           <ion-card-content>
             <br>
-            <ion-row style="padding-left: 10px;">
-              <ion-col width-50>
-                <input  type="radio" value="monsieur" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle" /> Monsieur 
-              </ion-col>
-              <ion-col width-50 text-left>
-                <input type="radio" value="madame" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle"/> Madame <br>
-              </ion-col>
+            <ion-item>
+              <label class="gender-choice" for="male">
+                <input  type="radio" id="male" value="monsieur" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle" checked> Monsieur 
+              </label>
+              <label class="gender-choice" for="female">
+                <input type="radio" id="female" value="madame" [class.invalid]="!validForm.controls.authorTitle.valid && (validForm.controls.authorTitle.dirty || formIsNotValid)" [(ngModel)]="post.authorTitle" formControlName="authorTitle"> Madame <br>
+              </label>
+            </ion-item>
 
-            </ion-row>
-            <ion-row>
-              <ion-item>
+            
+            <ion-item class="border-bottom">
                 <ion-label floating><h6>Nom</h6></ion-label>
-                <ion-input type="text" [class.invalid]="!validForm.controls.authorName.valid && (validForm.controls.authorName.dirty || formIsNotValid)" formControlName="authorName" [(ngModel)]="post.authorName" name="authorName"></ion-input>
-              </ion-item>
-              <ion-item *ngIf="!validForm.controls.authorName.valid && (validForm.controls.authorName.dirty || formIsNotValid)">
+                <ion-input tex-uppercase type="text" [class.invalid]="!validForm.controls.authorName.valid && (validForm.controls.authorName.dirty || formIsNotValid)" formControlName="authorName" [(ngModel)]="post.authorName" name="authorName"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!validForm.controls.authorName.valid && (validForm.controls.authorName.dirty || formIsNotValid)">
                 <h6 style="font-size: x-small" color="danger">Veuillez entrer un nom valide.</h6>
-              </ion-item>
-              <ion-item>
+            </ion-item>
+
+            <ion-item class="border-bottom">
                 <ion-label floating><h6>Prénom</h6></ion-label>
-                <ion-input type="text" [class.invalid]="!validForm.controls.authorFirstName.valid && (validForm.controls.authorFirstName.dirty || formIsNotValid)" formControlName="authorFirstName" [(ngModel)]="post.authorFirstName" name="authorFirstName"></ion-input>
-              </ion-item>
-              <ion-item *ngIf="!validForm.controls.authorFirstName.valid && (validForm.controls.authorFirstName.dirty || formIsNotValid)">
+                <ion-input text-capitalize type="text" [class.invalid]="!validForm.controls.authorFirstName.valid && (validForm.controls.authorFirstName.dirty || formIsNotValid)" formControlName="authorFirstName" [(ngModel)]="post.authorFirstName" name="authorFirstName"></ion-input>
+            </ion-item>
+            <ion-item *ngIf="!validForm.controls.authorFirstName.valid && (validForm.controls.authorFirstName.dirty || formIsNotValid)">
                 <h6 style="font-size: x-small" color="danger">Veuillez entrer un prénom valide</h6>
-              </ion-item>
-              <ion-item>
+            </ion-item>
+              
+            <ion-item class="border-bottom">
                 <ion-label floating><h6>Email</h6></ion-label>
                 <ion-input type="text" [class.invalid]="!validForm.controls.authorEmail.valid && (validForm.controls.authorEmail.dirty || formIsNotValid)" formControlName="authorEmail" [(ngModel)]="post.authorEmail" name="authorEmail"></ion-input>
-              </ion-item>
-              <ion-item *ngIf="!validForm.controls.authorEmail.valid && (validForm.controls.authorEmail.dirty || formIsNotValid)">
+            </ion-item>
+            <ion-item *ngIf="!validForm.controls.authorEmail.valid && (validForm.controls.authorEmail.dirty || formIsNotValid)">
                 <h6 style="font-size: x-small" color="danger">Veuillez entrer une adresse mail valide.</h6>
-              </ion-item>
-            </ion-row>
+            </ion-item>
+          
           </ion-card-content>
         </ion-card>
 
@@ -75,7 +79,7 @@
             <h5>Titre de votre proposition</h5>
           </ion-card-header>
           <ion-card-content>
-            <ion-textarea  placeholder="100 caractères minimum" [class.invalid]="!validForm.controls.suggestionTitle.valid && (validForm.controls.suggestionTitle.dirty || formIsNotValid)" formControlName="suggestionTitle" [(ngModel)]="post.suggestionTitle" name="suggestionTitle" ></ion-textarea>
+            <ion-textarea class="placeholder-txt" placeholder="100 caractères minimum" [class.invalid]="!validForm.controls.suggestionTitle.valid && (validForm.controls.suggestionTitle.dirty || formIsNotValid)" formControlName="suggestionTitle" [(ngModel)]="post.suggestionTitle" name="suggestionTitle" ></ion-textarea>
             <ion-item *ngIf="!validForm.controls.suggestionTitle.valid && (validForm.controls.suggestionTitle.dirty || formIsNotValid)">
               <h6 style="font-size: x-small;" color="danger">Le maximum de caractère requis est de 100.</h6>
             </ion-item>
@@ -86,7 +90,7 @@
             <h5>Détail de votre proposition</h5>
           </ion-card-header>
           <ion-card-content>
-            <ion-textarea  placeholder="1000 caractères minimum" [class.invalid]="!validForm.controls.suggestionDetail.valid && (validForm.controls.suggestionDetail.dirty || formIsNotValid)" formControlName="suggestionDetail" [(ngModel)]="post.suggestionDetail" name="suggestionDetail"></ion-textarea>
+            <ion-textarea class="placeholder-txt"  placeholder="1000 caractères minimum" [class.invalid]="!validForm.controls.suggestionDetail.valid && (validForm.controls.suggestionDetail.dirty || formIsNotValid)" formControlName="suggestionDetail" [(ngModel)]="post.suggestionDetail" name="suggestionDetail"></ion-textarea>
             <ion-item *ngIf="!validForm.controls.suggestionDetail.valid && (validForm.controls.suggestionDetail.dirty || formIsNotValid)">
               <h6 style="font-size: x-small;" color="danger">Le maximum de caractères requis est de 1000.</h6>
             </ion-item>
