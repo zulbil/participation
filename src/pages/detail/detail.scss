@@ -56,27 +56,7 @@ page-detail {
       padding-top: 30px; 
    }
 
-   .customRatingBar {
-        width: 100%; 
-        height: 30px; 
-        text-align: center; 
-        margin: 10px 2%; 
-        font-size: medium;
-        display: flex;
-        color: map-get($colors, light); 
-        padding: auto; 
-    }
-
-    .like {
-      height: 100%;
-      background: map-get($colors, darkgreen);
-    }
-
-    .dislike {
-     height: 100%; 
-     background: map-get($colors, darkred);   
-    }
-
+   
 }
 
 .ios{
