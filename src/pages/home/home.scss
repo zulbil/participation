@@ -3,9 +3,15 @@
   page-home {
 
     ion-content {
+<<<<<<< HEAD
+      background-image: url("../../assets/sondage.jpg");
+     /* background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg"); */
+      -webkit-background-image: url("../../assets/sondage.jpg");
+=======
       background-image: url("../../assets/monsondage.png");
      /* background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg"); */
       -webkit-background-image: url("../../assets/monsondage.png");
+>>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
       /*-webkit-background-image: url("http://beinweb.fr/wp-content/uploads/2014/08/comment-augmenter-participation-blog.jpg");*/
       background-origin: content-box;
       background-repeat: no-repeat;
