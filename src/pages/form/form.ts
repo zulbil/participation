@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-import { NavController, ViewController } from 'ionic-angular';
+import { NavController, ViewController, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+<<<<<<< HEAD
 import { post } from '../../model/post.model'; 
+=======
+import { post } from '../../model/post.model';
+>>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
 import { CacheProvider } from '../../providers/cache-provider';
 /*
   Generated class for the Form page.
@@ -33,7 +37,11 @@ export class FormPage {
     authorName: '',
     authorFirstName: '',
     authorEmail: ''
+<<<<<<< HEAD
   }; 
+=======
+  };
+>>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
 
   // Object that represent the post with the author and the suggestion related to him
   public post :post = {
@@ -43,16 +51,20 @@ export class FormPage {
     authorEmail: '',
     suggestionTitle: '',
     suggestionDetail: '',
-    like : 0, 
-    dislike : 0, 
-    hasLiked: false, 
+    like : 0,
+    dislike : 0,
+    hasLiked: false,
     hasDisliked: false
   }
 
 
   // We define an empty array of post
   public posts :post[] = [];
+<<<<<<< HEAD
   constructor(public navCtrl: NavController, public viewCtrl: ViewController, public formBuilder: FormBuilder, public cacheService: CacheProvider) {
+=======
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public alertCtrl: AlertController, public formBuilder: FormBuilder, public cacheService: CacheProvider) {
+>>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
 
     this.validForm = formBuilder.group({
       authorTitle: ['', Validators.required],
@@ -74,6 +86,10 @@ export class FormPage {
       this.cacheService.getCache('contactIdentity').then((contact) => {
           if (contact) {
             this.contactIdentity = contact;
+<<<<<<< HEAD
+=======
+            console.log(this.contactIdentity);
+>>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
           }
           this.validForm.controls['authorName'].setValue(this.contactIdentity.authorName || '');
           this.validForm.controls['authorFirstName'].setValue(this.contactIdentity.authorFirstName || '');
@@ -93,12 +109,22 @@ export class FormPage {
     this.formIsNotValid = true;
     if (!this.validForm.valid){
       console.log("Form is not valid");
+      this.showAlert();
     }
     else
     {
       console.log("Success");
       this.viewCtrl.dismiss(this.post);
     }
+  }
+
+  showAlert(){
+    let alert = this.alertCtrl.create({
+      title: "Attention",
+      subTitle:"Votre formulaire est invalide, Veuillez s'il vous plait remplir tous les champs",
+      buttons: ['OK']
+    });
+    alert.present();
   }
 
 
