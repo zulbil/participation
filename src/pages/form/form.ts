@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ViewController, AlertController } from 'ionic-angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-<<<<<<< HEAD
 import { post } from '../../model/post.model'; 
-=======
-import { post } from '../../model/post.model';
->>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
 import { CacheProvider } from '../../providers/cache-provider';
 /*
   Generated class for the Form page.
@@ -37,11 +33,7 @@ export class FormPage {
     authorName: '',
     authorFirstName: '',
     authorEmail: ''
-<<<<<<< HEAD
   }; 
-=======
-  };
->>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
 
   // Object that represent the post with the author and the suggestion related to him
   public post :post = {
@@ -60,11 +52,9 @@ export class FormPage {
 
   // We define an empty array of post
   public posts :post[] = [];
-<<<<<<< HEAD
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public formBuilder: FormBuilder, public cacheService: CacheProvider) {
-=======
-  constructor(public navCtrl: NavController, public viewCtrl: ViewController, public alertCtrl: AlertController, public formBuilder: FormBuilder, public cacheService: CacheProvider) {
->>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
+
+  constructor(public navCtrl: NavController, public viewCtrl: ViewController,public alertCtrl: AlertController,
+   public formBuilder: FormBuilder, public cacheService: CacheProvider) {
 
     this.validForm = formBuilder.group({
       authorTitle: ['', Validators.required],
@@ -86,10 +76,7 @@ export class FormPage {
       this.cacheService.getCache('contactIdentity').then((contact) => {
           if (contact) {
             this.contactIdentity = contact;
-<<<<<<< HEAD
-=======
             console.log(this.contactIdentity);
->>>>>>> 135be6c1773fb21801cc5e0b02124d917b5b7d9d
           }
           this.validForm.controls['authorName'].setValue(this.contactIdentity.authorName || '');
           this.validForm.controls['authorFirstName'].setValue(this.contactIdentity.authorFirstName || '');
