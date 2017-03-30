@@ -12,7 +12,7 @@ import { post } from '../../model/post.model';
   templateUrl: 'detail.html', 
   animations : [
     trigger('likeAnimation', [
-          transition('inactive => active', [
+          transition('inactive <=> active', [
            animate('1s linear', keyframes([
                style({ opacity: 0.2, offset: 0.2}), 
                style({ opacity: 0.4, offset: 0.4}),
@@ -21,7 +21,7 @@ import { post } from '../../model/post.model';
         ])
     ]), 
     trigger('dislikeAnimation', [
-          transition('inactive => active', [
+          transition('inactive <=> active', [
            animate('1s linear', keyframes([
                style({ opacity: 0.2, offset: 0.2}), 
                style({ opacity: 0.4, offset: 0.4}),
