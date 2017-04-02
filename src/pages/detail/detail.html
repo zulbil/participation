@@ -23,7 +23,7 @@
 
     <ion-item no-lines>
         <ion-avatar item-left>
-            <ion-icon id="icon-center" color="light" name="bulb"></ion-icon>
+            <ion-icon id="icon-center-bulb" color="light" name="bulb"></ion-icon>
         </ion-avatar>
         <p id="title">Détail du projet</p>
     </ion-item>
@@ -43,7 +43,7 @@
 
     <ion-row>
         <ion-item no-lines class="header-result-survey">
-            <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="light" id="icon-center"></i></ion-avatar>
+            <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="light" id="icon-center-megaphone"></i></ion-avatar>
             <p id="title">Résultat de la consultation</p>
         </ion-item>
     </ion-row> 
@@ -53,10 +53,10 @@
     <ion-row *ngIf="showRatingBar">
         <div class="customRatingBar">
             <div class="like" [style.width]="like +'%'" [@likeAnimation]="likeState">
-                <div style="padding-top: 5px;">{{like}}%</div>
+                <div id="text-rating">{{like}}%</div>
             </div>
             <div class="dislike" [style.width]="dislike+'%'" [@dislikeAnimation]="dislikeState">
-                <div style="padding-top: 5px;">{{dislike}}%</div>
+                <div id="text-rating">{{dislike}}%</div>
             </div>
         </div>
     </ion-row> 

@@ -9,7 +9,7 @@
 <ion-content>
 
   <!-- The Header section of the content -->
-  <ion-list class="header-section">
+  <ion-list>
     <ion-row>
       <ion-col width-75>
         <div class="text-header">
@@ -44,11 +44,11 @@
                 
                 <p class="text-author">Par {{post.authorName | SubstringName}}.{{post.authorFirstName}}, le 22/03/17</p>
                 <ion-row>
-                  <ion-col width-60><button ion-button outline block style="padding-left: 5px;" color="primary" (click)="moreDetail(post)" >Détail</button></ion-col>
+                  <ion-col width-60><button ion-button outline block class="detailButton" (click)="moreDetail(post)" >Détail</button></ion-col>
                   <ion-col width-20>
-                    <button ion-button color="darkgreen" [disabled]="post.hasLiked" block (click)="dolike(post)">{{post.like}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+                    <button ion-button [color]="darkgreen" [disabled]="post.hasLiked" block (click)="dolike(post)">{{post.like}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
                   </ion-col>
-                  <ion-col width-20><button ion-button color="darkred" [disabled]="post.hasDisliked" block (click)="doDislike(post)">{{post.dislike}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></button></ion-col>
+                  <ion-col width-20><button ion-button [color]="darkred" [disabled]="post.hasDisliked" block (click)="doDislike(post)">{{post.dislike}} <i class="fa fa-thumbs-down" aria-hidden="true"></i></button></ion-col>
                 </ion-row>
               </ion-card-content>
           </ion-card>

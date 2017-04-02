@@ -70,8 +70,8 @@ export class DetailPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.post = navParams.get('post');
-    this.hasDisliked = this.post.hasLiked;
-    this.hasLiked = this.post.hasDisliked;
+    this.hasDisliked = this.post.hasDisliked;
+    this.hasLiked = this.post.hasLiked;
 
     console.log(this.post);
     this.initChart();
@@ -91,8 +91,19 @@ export class DetailPage {
   // To like a post
   dolike(){
     this.post.like++; 
-    this.redColor = this.greyColor;
-    this.post.hasLiked = true; 
+    this.post.hasLiked = this.hasLiked = true; 
+    this.redColor = this.greyColor; 
+
+    if(this.hasDisliked != true) {}
+
+    else
+    {
+      this.post.dislike--; 
+      this.hasDisliked = false; 
+      this.redColor = this.greyColor; 
+      this.greenColor = "darkgreen";
+    }
+    this.post.hasDisliked = this.hasDisliked;
     this.likeState = (this.likeState === 'inactive' ? 'active' : 'inactive'); 
     this.initChart();
   }
@@ -100,8 +111,20 @@ export class DetailPage {
   // To dislike a post
   doDislike(){
     this.post.dislike++;
-    this.greenColor = this.greyColor;
-    this.post.hasDisliked = true; 
+    this.post.hasDisliked = this.hasDisliked = true;
+    this.greenColor = this.greyColor; 
+
+    if(this.hasLiked != true) {}
+    
+    else 
+    {
+      this.post.like --; 
+      this.hasLiked = false; 
+      this.redColor = "darkred";
+      this.greenColor = this.greyColor;
+    }
+
+    this.post.hasLiked = this.hasLiked; 
     this.dislikeState = (this.dislikeState === 'inactive' ? 'active' : 'inactive'); 
     this.initChart();
   }
