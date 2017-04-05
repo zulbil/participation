@@ -23,7 +23,7 @@
 
     <ion-item no-lines>
         <ion-avatar item-left>
-            <ion-icon id="icon-center-bulb" color="light" name="bulb"></ion-icon>
+            <ion-icon  id="icon-center-bulb" [color]="lightColor" name="bulb"></ion-icon>
         </ion-avatar>
         <p id="title">Détail du projet</p>
     </ion-item>
@@ -43,7 +43,9 @@
 
     <ion-row>
         <ion-item no-lines class="header-result-survey">
-            <ion-avatar item-left><i class="fa fa-bullhorn" aria-hidden="true" color="light" id="icon-center-megaphone"></i></ion-avatar>
+            <ion-avatar item-left>
+                <i class="fa fa-bullhorn" aria-hidden="true" [color]="lightColor" id="icon-center-megaphone"></i>
+            </ion-avatar>
             <p id="title">Résultat de la consultation</p>
         </ion-item>
     </ion-row> 

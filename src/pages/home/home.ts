@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, ModalController, NavParams } from 'ionic-angular';
 import { FormPage } from '../form/form';
 import { DetailPage } from '../detail/detail';
-import Moment from 'moment';
 import { post } from '../../model/post.model';
 
 @Component({
@@ -58,21 +57,18 @@ export class HomePage {
         }
       ]
       this.init();
-      this.getCurrentDate();
       console.log(this.posts);
   }
 
   init(){
-    if(this.posts.length >= 0)
+    if(this.posts.length > 0)
     {
+       console.log(this.posts.length);
       this.postIsEmpty = false;
     }
-  }
-
-  getCurrentDate(){
-    Moment.locale();
-    this.date = Moment().format('l');
-    return this.date;
+    else {
+      this.postIsEmpty = true; 
+    }
   }
 
   fillInformation(){

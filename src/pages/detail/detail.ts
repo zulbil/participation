@@ -42,6 +42,8 @@ export class DetailPage {
 
   greyColor: string = "grey";
 
+  lightColor: string = "light";
+
   post: post = {
     authorTitle: '',
     authorName: '',

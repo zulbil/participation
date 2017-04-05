@@ -44,7 +44,7 @@
                 
                 <p class="text-author">Par {{post.authorName | SubstringName}}.{{post.authorFirstName}}, le 22/03/17</p>
                 <ion-row>
-                  <ion-col width-60><button ion-button outline block class="detailButton" (click)="moreDetail(post)" >Détail</button></ion-col>
+                  <ion-col><button ion-button outline block class="detailButton" (click)="moreDetail(post)" >Détail</button></ion-col>
                   <ion-col width-20>
                     <button ion-button [color]="darkgreen" [disabled]="post.hasLiked" block (click)="dolike(post)">{{post.like}} <i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
                   </ion-col>
