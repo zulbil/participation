@@ -57,7 +57,7 @@
                 <ion-input text-capitalize type="text" [class.invalid]="!validForm.controls.authorFirstName.valid && (validForm.controls.authorFirstName.dirty || formIsNotValid)" formControlName="authorFirstName" [(ngModel)]="post.authorFirstName" name="authorFirstName"></ion-input>
             </ion-item>
             <ion-item *ngIf="!validForm.controls.authorFirstName.valid && (validForm.controls.authorFirstName.dirty || formIsNotValid)">
-                <p ion-text class="text-warning" color="danger">Veuillez entrer un prénom valide</p>
+                <p ion-text class="text-warning" color="danger">Veuillez entrer un prénom valide.</p>
             </ion-item>
               
             <ion-item class="border-bottom">
@@ -76,7 +76,7 @@
             <p class="suggestion-label">Titre de votre proposition</p>
           </ion-card-header>
           <ion-card-content>
-            <ion-textarea class="placeholder-txt" placeholder="100 caractères minimum" [class.invalid]="!validForm.controls.suggestionTitle.valid && (validForm.controls.suggestionTitle.dirty || formIsNotValid)" formControlName="suggestionTitle" [(ngModel)]="post.suggestionTitle" name="suggestionTitle" ></ion-textarea>
+            <ion-textarea class="placeholder-txt" placeholder="100 caractères maximum" [class.invalid]="!validForm.controls.suggestionTitle.valid && (validForm.controls.suggestionTitle.dirty || formIsNotValid)" formControlName="suggestionTitle" [(ngModel)]="post.suggestionTitle" name="suggestionTitle" ></ion-textarea>
             <ion-item *ngIf="!validForm.controls.suggestionTitle.valid && (validForm.controls.suggestionTitle.dirty || formIsNotValid)">
               <p ion-text class="text-warning" color="danger">Le maximum de caractère requis est de 100.</p>
             </ion-item>
@@ -87,7 +87,7 @@
             <p class="suggestion-label">Détail de votre proposition</p>
           </ion-card-header>
           <ion-card-content>
-            <ion-textarea class="placeholder-txt"  placeholder="1000 caractères minimum" [class.invalid]="!validForm.controls.suggestionDetail.valid && (validForm.controls.suggestionDetail.dirty || formIsNotValid)" formControlName="suggestionDetail" [(ngModel)]="post.suggestionDetail" name="suggestionDetail"></ion-textarea>
+            <ion-textarea class="placeholder-txt"  placeholder="1000 caractères maximum" [class.invalid]="!validForm.controls.suggestionDetail.valid && (validForm.controls.suggestionDetail.dirty || formIsNotValid)" formControlName="suggestionDetail" [(ngModel)]="post.suggestionDetail" name="suggestionDetail"></ion-textarea>
             <ion-item *ngIf="!validForm.controls.suggestionDetail.valid && (validForm.controls.suggestionDetail.dirty || formIsNotValid)">
               <p ion-text class="text-warning" color="danger">Le maximum de caractères requis est de 1000.</p>
             </ion-item>
